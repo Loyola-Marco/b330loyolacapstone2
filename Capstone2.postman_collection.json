@@ -1,0 +1,429 @@
+{
+	"info": {
+		"_postman_id": "3ce59639-77e8-4a61-8b3a-45f57f6bee92",
+		"name": "Capstone2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30175114"
+	},
+	"item": [
+		{
+			"name": "POST: Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"mister@mail.com\",\r\n    \"password\" : \"mister123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/users/register",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST: Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"admin1@mail.com\",\r\n    \"password\" : \"admin123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/users/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT: Update user as admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWI2MTQ4NDg4ZDA5YTIwMGI1Yzk1MSIsImVtYWlsIjoiYWRtaW4xQG1haWwuY29tIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTcwNDY4MTgxOX0.vritqpmPHSAhEcxL3p5uHk_E-jKcJAB8rsqtekt8YMg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\" : \"659b5d50c340a76ec08e042a\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/users/update-as-admin",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"users",
+						"update-as-admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST: Create a product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWI2MTQ4NDg4ZDA5YTIwMGI1Yzk1MSIsImVtYWlsIjoiYWRtaW4xQG1haWwuY29tIiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNzA0NzE3MDM1fQ.5Ojv5-WeNBYuZ7_jqxlaonKP-JKxIlq-8hr0A6nus6E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"Dagon\",\r\n    \"description\" : \"A lesser wand that grows in power the longer it is used, it brings magic to the fingertips of the user.\",\r\n    \"price\" : 5200\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/products/create-product",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"products",
+						"create-product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET: Retrieve all products",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWI2MTQ4NDg4ZDA5YTIwMGI1Yzk1MSIsImVtYWlsIjoiYWRtaW4xQG1haWwuY29tIiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNzA0NzE3MDQ4fQ.oaAdkfhXqjXIubuP0-ipbTIFVsv4rrmDutuwfIVAvqA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3001/products/all-products",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"products",
+						"all-products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET: Retrieve all active product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3001/products/activeProducts",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"products",
+						"activeProducts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET: Retrieve single product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3001/products/659bea8ecf93970358df1dae",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"products",
+						"659bea8ecf93970358df1dae"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT: Update the information of a product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWI2MTQ4NDg4ZDA5YTIwMGI1Yzk1MSIsImVtYWlsIjoiYWRtaW4xQG1haWwuY29tIiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNzA0Nzk2OTQ1fQ.kxceBb3b2xbVgsw5404PK5kQrfzh7oxFAfxBeSeyPEo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Excalibur\",\r\n    \"description\": \"An enchanted sword of a mysterious warrior\",\r\n    \"price\": 3999\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/products/659bea8ecf93970358df1dae",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"products",
+						"659bea8ecf93970358df1dae"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT: Archive a product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWI2MTQ4NDg4ZDA5YTIwMGI1Yzk1MSIsImVtYWlsIjoiYWRtaW4xQG1haWwuY29tIiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNzA0Nzk2OTQ1fQ.kxceBb3b2xbVgsw5404PK5kQrfzh7oxFAfxBeSeyPEo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"isActive\" : false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/products/659bea8ecf93970358df1dae/archive",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"products",
+						"659bea8ecf93970358df1dae",
+						"archive"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT: Activate a product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWI2MTQ4NDg4ZDA5YTIwMGI1Yzk1MSIsImVtYWlsIjoiYWRtaW4xQG1haWwuY29tIiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNzA0Nzk2OTQ1fQ.kxceBb3b2xbVgsw5404PK5kQrfzh7oxFAfxBeSeyPEo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"isActive\" : true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/products/659bea8ecf93970358df1dae/activate",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"products",
+						"659bea8ecf93970358df1dae",
+						"activate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST: Create order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWI1ZDUwYzM0MGE3NmVjMDhlMDQyYSIsImVtYWlsIjoibWFyY28xMjNAbWFpbC5jb20iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzA0ODg5NzA4fQ.cp0GXxKqx7bnRI-gOUMjSvVMpxIBdawY5C0Lfx0PKNU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productId\" : \"659bea8ecf93970358df1dae\",\r\n    \"productName\" : \"Excalibur\",\r\n    \"quantity\" : 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/users/checkOut",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"users",
+						"checkOut"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET: Retrieve user details",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWI1ZDUwYzM0MGE3NmVjMDhlMDQyYSIsImVtYWlsIjoibWFyY28xMjNAbWFpbC5jb20iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzA0ODg5NzA4fQ.cp0GXxKqx7bnRI-gOUMjSvVMpxIBdawY5C0Lfx0PKNU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3001/users/userDetails",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"users",
+						"userDetails"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET: User's orders",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWU5NDNhMzM2NzRlMmZjM2Q4MTZkMiIsImVtYWlsIjoibWFyY28xMjNAbWFpbC5jb20iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzA0ODkxNDYyfQ.ql5KgBx3-8h9pkwZQWFeTdijiq7oFc-zBMR1Iy3itlQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3001/users/userOrders",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"users",
+						"userOrders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET: All orders",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
